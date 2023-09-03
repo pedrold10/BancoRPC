@@ -26,4 +26,15 @@ public class BancoServiceServer extends UnicastRemoteObject implements BancoServ
         return saldoContas.size();
     }
 
+    @Override
+    public String listarContas() throws RemoteException{
+        String contas = "";
+        for(Double conta : saldoContas.values()){
+            contas+="\nSaldo da conta: " + conta+"\n";
+        }
+        return contas;
+    }
+
+    
+
 }
